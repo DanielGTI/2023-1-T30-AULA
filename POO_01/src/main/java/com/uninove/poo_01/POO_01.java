@@ -15,8 +15,12 @@ public class POO_01 {
         System.out.print("Segundo valor: ");
         b = ler.nextInt();
         
+        //  Instanciar a classe Matematica
+        Matematica calcular = new Matematica(a, b);
+        
+        
         System.out.print("\n----------------------\n");
-        System.out.print("\nA soma dos valores é: " + (a+b));
+        System.out.print("\nA soma dos valores é: " + calcular.somar() );
         System.out.print("\nA subtração dos valores é: " + (a-b));
         System.out.print("\nA multiplicação dos valores é: " + (a*b));
         System.out.print("\nA divisão dos valores é: " + (a/b));             
