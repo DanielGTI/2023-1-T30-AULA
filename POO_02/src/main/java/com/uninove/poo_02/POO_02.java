@@ -5,37 +5,57 @@ import java.util.Scanner;
 public class POO_02 {
 
     public static void main(String[] args) {
-        
         Scanner ler = new Scanner(System.in);
-        float av1, av2, av3, media;
+        int escolha;
         
+        System.out.print("... Menu de exemplos ...\n");
+        System.out.print("\tOpção 1: Exemplo de notas.\n");
+        System.out.print("\tOpção 2: Exemplo de repetição.\n");
+        System.out.print("\tOpção 3: Exemplo de controles.\n");
+        System.out.print("\nEscolha uma opção: ");
         
+        escolha = ler.nextInt();
+        
+        switch(escolha){
+            case 1:     notas();                break;
+            case 2:     exemplo_repeticao();    break;
+            case 3:     controle();             break;
+            
+            default:    System.out.println("Opção Inválida\n"); break;
+        }       
+    }    
+    
+    public static void exemplo_repeticao(){
         /*
-            REPETIÇÃO
-        
             Do While(??)    // REPITA
             While(??)       // ENQUANTO 
             For(???)        // PARA 
         */
-        int x = 11;
+        int x = 1;
         do{
-            System.out.println(x);
+            System.out.println("do while() " + x);
             x++;
         }while( x<=10 );
         
-        x = 11;
+        x = 1;
         while( x<=10 ){
-            System.out.println(x);
+            System.out.println("while() " + x);
             x++;
         }
         
-        for( x=11; x<=10; x++ ){
-            System.out.println(x);
+        for( x=1; x<=10; x++ ){
+            System.out.println("for() " + x);
         }
-        
-      
-        
-        
+    }
+    
+    public static void controle(){
+        System.out.println("\nMétodo de controle\n");
+    }
+    
+    public static void notas(){
+    
+        Scanner ler = new Scanner(System.in);
+        float av1, av2, av3, media;
         
         
         System.out.print("Informe a nota AV1: ");
@@ -80,9 +100,8 @@ public class POO_02 {
            
            default: System.out.println("Aluno reprovado."); break;
        }
-        
     }
-    
+        
     public static float valorMedia(float nota1, float nota2, float nota3){
     
         float valorMedio=0;
