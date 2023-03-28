@@ -123,7 +123,7 @@ public class POO_02 {
         Random num_aleatorio = new Random();
         
         for( i=0; i<5; i++){
-            numero = num_aleatorio.nextInt(10);
+            numero = num_aleatorio.nextInt(5);
             bingo[i] = numero;
             System.out.print("Numero gerado (" + (i+1) + "): " + bingo[i] + "\n");
         }
