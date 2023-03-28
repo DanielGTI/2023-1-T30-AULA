@@ -1,5 +1,5 @@
 package com.uninove.poo_02;
-
+import java.util.Random;
 import java.util.Scanner;
 
 public class POO_02 {
@@ -8,22 +8,35 @@ public class POO_02 {
         Scanner ler = new Scanner(System.in);
         int escolha;
         
-        System.out.print("... Menu de exemplos ...\n");
-        System.out.print("\tOpção 1: Exemplo de notas.\n");
-        System.out.print("\tOpção 2: Exemplo de repetição.\n");
-        System.out.print("\tOpção 3: Exemplo de controles.\n");
-        System.out.print("\nEscolha uma opção: ");
-        
-        escolha = ler.nextInt();
-        
-        switch(escolha){
-            case 1:     notas();                break;
-            case 2:     exemplo_repeticao();    break;
-            case 3:     controle();             break;
-            
-            default:    System.out.println("Opção Inválida\n"); break;
-        }       
+        do{
+            System.out.print("\n\n---------------------------------------\n");
+            System.out.print("\t|.. Menu de exemplos ..|\n");
+            System.out.print("\tOpção 1: Exemplo de notas.\n");
+            System.out.print("\tOpção 2: Exemplo de repetição.\n");
+            System.out.print("\tOpção 3: Exemplo de controles.\n");
+            System.out.print("\tOpção 4: Sorteio\n");
+            System.out.print("\tOpção 0: Sair do sistema.\n");
+
+            System.out.print("\nEscolha uma opção: ");
+            escolha = ler.nextInt();
+
+            switch(escolha){
+                case 1:     notas();                break;
+                case 2:     exemplo_repeticao();    break;
+                case 3:     controle();             break;
+                case 4:     sorteio();              break;
+                case 0:     sair();                 break;
+                    
+                default:    System.out.println("Opção Inválida\n"); break;
+            }
+        }while( escolha != 0 );
     }    
+    
+    public static void sair(){
+        System.out.println("\n-------------------------------------");
+        System.out.println("Obrigado por utilizar o nosso sistema\n");
+        System.out.println("Até breve.\n");
+    }
     
     public static void exemplo_repeticao(){
         /*
@@ -102,6 +115,20 @@ public class POO_02 {
        }
     }
         
+    public static void sorteio(){
+        int numero, i;
+        int bingo[] = new int[5];
+        
+        System.out.print("\nSorteio do bingo:\n");
+        Random num_aleatorio = new Random();
+        
+        for( i=0; i<5; i++){
+            numero = num_aleatorio.nextInt(10);
+            bingo[i] = numero;
+            System.out.print("Numero gerado (" + (i+1) + "): " + bingo[i] + "\n");
+        }
+    }
+    
     public static float valorMedia(float nota1, float nota2, float nota3){
     
         float valorMedio=0;
