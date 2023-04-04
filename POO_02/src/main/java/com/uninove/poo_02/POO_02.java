@@ -13,9 +13,11 @@ class GlobalVariaveis{
         for(int i=0; i<10; i++){
             for( int j=0; j<5; j++){
                 quina[i][j] = POO_02.num_sorteio();
+                //System.out.printf("%02d - ", GlobalVariaveis.quina[i][j]);
             }
             Arrays.sort(quina[i]);
-        }      
+        }   
+         
     }
 }    
     
@@ -67,13 +69,9 @@ public class POO_02 {
                     System.out.printf("%02d", GlobalVariaveis.quina[i][j]);
             }
             System.out.println("");
-            
         } 
-        
-        
     }
-    
-    
+   
     public static void sair(){
         System.out.println("\n-------------------------------------");
         System.out.println("Obrigado por utilizar o nosso sistema\n");
@@ -159,7 +157,7 @@ public class POO_02 {
     
     public static int num_sorteio(){
         Random num_aleatorio = new Random();
-        int numero = (num_aleatorio.nextInt(60))+1;
+        int numero = (num_aleatorio.nextInt(10))+1;
         return numero;
     }
     
@@ -196,6 +194,5 @@ public class POO_02 {
              valorMedio = (nota1 + nota2) / 2;      //  < AV3
         }        
         return valorMedio;
-    }
-    
+    }    
 }
