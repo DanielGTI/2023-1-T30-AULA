@@ -2,8 +2,23 @@ package com.uninove.poo_02;
 import java.util.Random;
 import java.util.Scanner;
 
-public class POO_02 {
 
+class GlobalVariaveis{
+
+    static int quina[][]= new int [10][5];
+    
+    public static void realizarQuina(){
+        for(int i=0; i<10; i++){
+            for( int j=0; j<5; j++){
+                quina[i][j] = POO_02.num_sorteio();
+            }
+        }      
+    }
+}    
+    
+public class POO_02 {
+    
+    
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
         int escolha;
@@ -15,6 +30,7 @@ public class POO_02 {
             System.out.print("\tOpção 2: Exemplo de repetição.\n");
             System.out.print("\tOpção 3: Exemplo de controles.\n");
             System.out.print("\tOpção 4: Sorteio\n");
+            System.out.print("\tOpção 5: Listar Sorteios\n");
             System.out.print("\tOpção 0: Sair do sistema.\n");
 
             System.out.print("\nEscolha uma opção: ");
@@ -25,12 +41,35 @@ public class POO_02 {
                 case 2:     exemplo_repeticao();    break;
                 case 3:     controle();             break;
                 case 4:     sorteio();              break;
+                case 5:     listar_sorteio();       break;
                 case 0:     sair();                 break;
                     
                 default:    System.out.println("Opção Inválida\n"); break;
             }
         }while( escolha != 0 );
     }    
+
+
+    public static void listar_sorteio(){
+        
+        
+        System.out.println("\n-------------------------------------");
+        System.out.println("Listar sorteio\n");
+       
+        for(int i=0; i<10; i++){
+            for( int j=0; j<5; j++){
+                if( j < 4 )
+                    System.out.print(GlobalVariaveis.quina[i][j] + " - ");
+                else
+                    System.out.print(GlobalVariaveis.quina[i][j]);
+            }
+            System.out.println("");
+            
+        } 
+        
+        
+    }
+    
     
     public static void sair(){
         System.out.println("\n-------------------------------------");
@@ -114,19 +153,28 @@ public class POO_02 {
            default: System.out.println("Aluno reprovado."); break;
        }
     }
+    
+    public static int num_sorteio(){
+        Random num_aleatorio = new Random();
+        int numero = (num_aleatorio.nextInt(60))+1;
+        return numero;
+    }
+    
+    public static int[] sorteio(){
         
-    public static void sorteio(){
-        int numero, i;
+        GlobalVariaveis.realizarQuina();
+                
+        int i;
         int bingo[] = new int[5];
         
         System.out.print("\nSorteio do bingo:\n");
-        Random num_aleatorio = new Random();
         
         for( i=0; i<5; i++){
-            numero = num_aleatorio.nextInt(5);
-            bingo[i] = numero;
+            bingo[i] = GlobalVariaveis.quina[9][i];
             System.out.print("Numero gerado (" + (i+1) + "): " + bingo[i] + "\n");
         }
+        
+        return bingo;
     }
     
     public static float valorMedia(float nota1, float nota2, float nota3){
