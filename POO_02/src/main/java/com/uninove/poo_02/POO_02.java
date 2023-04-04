@@ -29,7 +29,7 @@ public class POO_02 {
             System.out.print("\tOpção 1: Exemplo de notas.\n");
             System.out.print("\tOpção 2: Exemplo de repetição.\n");
             System.out.print("\tOpção 3: Exemplo de controles.\n");
-            System.out.print("\tOpção 4: Sorteio\n");
+            System.out.print("\tOpção 4: Novos Sorteios\n");
             System.out.print("\tOpção 5: Listar Sorteios\n");
             System.out.print("\tOpção 0: Sair do sistema.\n");
 
@@ -167,7 +167,7 @@ public class POO_02 {
         int i;
         int bingo[] = new int[5];
         
-        System.out.print("\nSorteio do bingo:\n");
+        System.out.print("\nSorteio do bingo (ultimo sorteio):\n");
         
         for( i=0; i<5; i++){
             bingo[i] = GlobalVariaveis.quina[9][i];
