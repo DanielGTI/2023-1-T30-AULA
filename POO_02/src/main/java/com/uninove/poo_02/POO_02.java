@@ -1,6 +1,8 @@
 package com.uninove.poo_02;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
+
 
 
 class GlobalVariaveis{
@@ -12,6 +14,7 @@ class GlobalVariaveis{
             for( int j=0; j<5; j++){
                 quina[i][j] = POO_02.num_sorteio();
             }
+            Arrays.sort(quina[i]);
         }      
     }
 }    
@@ -59,9 +62,9 @@ public class POO_02 {
         for(int i=0; i<10; i++){
             for( int j=0; j<5; j++){
                 if( j < 4 )
-                    System.out.print(GlobalVariaveis.quina[i][j] + " - ");
+                    System.out.printf("%02d - ", GlobalVariaveis.quina[i][j]);
                 else
-                    System.out.print(GlobalVariaveis.quina[i][j]);
+                    System.out.printf("%02d", GlobalVariaveis.quina[i][j]);
             }
             System.out.println("");
             
@@ -160,11 +163,12 @@ public class POO_02 {
         return numero;
     }
     
-    public static int[] sorteio(){
+    public static void sorteio(){
         
         GlobalVariaveis.realizarQuina();
-                
-        int i;
+        listar_sorteio();     
+        
+        /*int i;
         int bingo[] = new int[5];
         
         System.out.print("\nSorteio do bingo (ultimo sorteio):\n");
@@ -173,8 +177,8 @@ public class POO_02 {
             bingo[i] = GlobalVariaveis.quina[9][i];
             System.out.print("Numero gerado (" + (i+1) + "): " + bingo[i] + "\n");
         }
+        */
         
-        return bingo;
     }
     
     public static float valorMedia(float nota1, float nota2, float nota3){
