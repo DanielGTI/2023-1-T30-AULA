@@ -157,7 +157,7 @@ public class POO_02 {
     
     public static int num_sorteio(){
         Random num_aleatorio = new Random();
-        int numero = (num_aleatorio.nextInt(10))+1;
+        int numero = (num_aleatorio.nextInt(60))+1;
         return numero;
     }
     
