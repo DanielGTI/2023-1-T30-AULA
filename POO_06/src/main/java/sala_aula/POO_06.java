@@ -2,6 +2,7 @@ package sala_aula;
 
 public class POO_06 {
 
+    // Executa uma simulacao completa de jogo para demonstrar os pilares de POO.
     public static void main(String[] args) {
 
         // Criacao das selecoes
@@ -23,6 +24,7 @@ public class POO_06 {
         Pessoal pessoa1 = jogador1;
         Pessoal pessoa2 = jogador3;
 
+        // Exibe o comportamento polimorfico de objetos do tipo Jogador.
         System.out.println("=== Exemplo de Polimorfismo ===");
         System.out.println(pessoa1.descreverPapel());
         System.out.println(pessoa2.descreverPapel());
@@ -36,6 +38,7 @@ public class POO_06 {
         finalCopa.registrarGolVisitante(jogador3);
         finalCopa.registrarGolCasa(jogador1);
 
+        // Mostra os elencos cadastrados para cada selecao.
         System.out.println("\n=== Elenco Brasil ===");
         System.out.println(brasil.listarJogadores());
 
@@ -45,6 +48,7 @@ public class POO_06 {
         System.out.println("=== Resumo da Partida ===");
         System.out.println(finalCopa.resumoPartida());
 
+        // Exibe o total de gols marcados por jogadores da simulacao.
         System.out.println("\n=== Estatisticas ===");
         System.out.println("Gols do " + jogador1.getNome() + ": " + jogador1.getGolsNaCopa());
         System.out.println("Gols do " + jogador3.getNome() + ": " + jogador3.getGolsNaCopa());

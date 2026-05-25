@@ -10,6 +10,7 @@ public class Jogador extends Pessoal {
     private int numeroCamisa;
     private int golsNaCopa;
 
+    // Cria o jogador e inicia o total de gols na Copa com zero.
     public Jogador(String nome, int idade, String pais, String posicao, int numeroCamisa) {
         super(nome, idade, pais);
         this.posicao = posicao;
@@ -37,6 +38,7 @@ public class Jogador extends Pessoal {
         return golsNaCopa;
     }
 
+    // Atualiza a estatistica individual sempre que o jogador marca.
     public void marcarGol() {
         golsNaCopa++;
     }

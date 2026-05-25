@@ -7,6 +7,7 @@ public class Partida {
     private Local local;
     private Placar placar;
 
+    // Inicializa uma partida com seleções, local e placar zerado.
     public Partida(Selecao casa, Selecao visitante, Local local) {
         this.casa = casa;
         this.visitante = visitante;
@@ -30,16 +31,19 @@ public class Partida {
         return placar;
     }
 
+    // Registra o gol para o time da casa e para o jogador responsável.
     public void registrarGolCasa(Jogador jogador) {
         placar.golCasa();
         jogador.marcarGol();
     }
 
+    // Registra o gol para o visitante e para o jogador responsável.
     public void registrarGolVisitante(Jogador jogador) {
         placar.golVisitante();
         jogador.marcarGol();
     }
 
+    // Gera uma visão textual final com confronto, local e resultado.
     public String resumoPartida() {
         String info = "PARTIDA DA COPA DO MUNDO\n";
         info += casa.getPais() + " x " + visitante.getPais() + "\n";

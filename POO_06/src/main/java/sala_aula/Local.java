@@ -6,6 +6,7 @@ public class Local {
     private String cidade;
     private int capacidade;
 
+    // Define os dados basicos do estadio onde a partida acontece.
     public Local(String estadio, String cidade, int capacidade) {
         this.estadio = estadio;
         this.cidade = cidade;
@@ -32,12 +33,14 @@ public class Local {
         return capacidade;
     }
 
+    // Atualiza a capacidade apenas com valores positivos.
     public void setCapacidade(int capacidade) {
         if (capacidade > 0) {
             this.capacidade = capacidade;
         }
     }
 
+    // Retorna uma descricao pronta para exibicao em telas e relatorios.
     public String exibirLocal() {
         return estadio + " - " + cidade + " (Capacidade: " + capacidade + ")";
     }

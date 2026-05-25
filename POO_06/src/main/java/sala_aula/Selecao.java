@@ -11,6 +11,7 @@ public class Selecao {
     private String tecnico;
     private List<Jogador> jogadores;
 
+    // Cria a selecao com dados iniciais e lista vazia de jogadores.
     public Selecao(String pais, String tecnico) {
         this.pais = pais;
         this.tecnico = tecnico;
@@ -33,6 +34,7 @@ public class Selecao {
         this.tecnico = tecnico;
     }
 
+    // Adiciona um jogador ao elenco da selecao.
     public void adicionarJogador(Jogador jogador) {
         jogadores.add(jogador);
     }
@@ -41,6 +43,7 @@ public class Selecao {
         return jogadores;
     }
 
+    // Soma os gols de todos os jogadores cadastrados na selecao.
     public int getTotalGolsJogadores() {
         int total = 0;
         for (Jogador jogador : jogadores) {
@@ -49,6 +52,7 @@ public class Selecao {
         return total;
     }
 
+    // Monta uma descricao textual do elenco para exibicao.
     public String listarJogadores() {
         String info = "Selecao: " + pais + " | Tecnico: " + tecnico + "\n";
 
